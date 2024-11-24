@@ -22,10 +22,6 @@ jobs:
           java-version: '17'
           distribution: 'temurin' # Especifica a distribuição do Java
 
-      # Build com Gradle
-      - name: Build with Gradle
-        run: ./gradlew clean build -x test
-
       # Configurar o Docker para Login
       - name: Login to DockerHub
         uses: docker/login-action@v2
