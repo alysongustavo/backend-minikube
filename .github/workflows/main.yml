@@ -36,7 +36,7 @@ jobs:
       # Construir e Publicar a Imagem Docker
       - name: Build and Push Docker Image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/backend-minikube:latest .
-          docker tag ${{ secrets.DOCKER_USERNAME }}/backend-minikube:latest ${{ secrets.DOCKER_USERNAME }}/backend-minikube:${{ github.sha }}
-          docker push ${{ secrets.DOCKER_USERNAME }}/backend-minikube:latest
-          docker push ${{ secrets.DOCKER_USERNAME }}/backend-minikube:${{ github.sha }}
+          docker build -t ${{ env.DOCKER_USERNAME }}/backend-minikube:latest .
+          docker tag ${{ env.DOCKER_USERNAME }}/backend-minikube:latest ${{ env.DOCKER_USERNAME }}/backend-minikube:${{ github.sha }}
+          docker push ${{ env.DOCKER_USERNAME }}/backend-minikube:latest
+          docker push ${{ env.DOCKER_USERNAME }}/backend-minikube:${{ github.sha }}
