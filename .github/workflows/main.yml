@@ -34,5 +34,4 @@ jobs:
         run: |
           docker build -t ${{ secrets.DOCKER_USERNAME }}/backend-minikube:latest .
           docker tag ${{ secrets.DOCKER_USERNAME }}/backend-minikube:latest ${{ secrets.DOCKER_USERNAME }}/backend-minikube:${{ github.sha }}
-          docker push ${{ secrets.DOCKER_USERNAME }}/backend-minikube:latest
           docker push ${{ secrets.DOCKER_USERNAME }}/backend-minikube:${{ github.sha }}
